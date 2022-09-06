@@ -3,15 +3,15 @@ const color = document.getElementById("colorSelector");
 const size = document.getElementById("sizeSelector");
 
 
-let height = document.getElementById("gridHeight").value;
-let width = document.getElementById("gridWidth").value;
+const height = document.getElementById("gridHeight").value;
+const width = document.getElementById("gridWidth").value;
 makeGrid(height, width);
 
 sizeSelector.addEventListener("click", (event) => {
     event.preventDefault();
 
-    let height = document.getElementById("gridHeight").value;
-    let width = document.getElementById("gridWidth").value;
+    const height = document.getElementById("gridHeight").value;
+    const width = document.getElementById("gridWidth").value;
     canvas.firstElementChild.remove();
 
     makeGrid(height, width);
