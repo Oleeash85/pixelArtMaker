@@ -1,14 +1,17 @@
 const canvas = document.getElementById("pixelCanvas");
 const color = document.getElementById("colorSelector");
 const size = document.getElementById("sizeSelector");
+
+// allows the Grid/Canvas to have height and width element
 const height = document.getElementById("gridHeight").value;
 const width = document.getElementById("gridWidth").value;
-
 makeGrid(height, width);
 
+//Allows you to select Canvas size and clears tiles when submit is pressed. 
 sizeSelector.addEventListener("click", function(event) {
     event.preventDefault();
 
+    // removes previous canvas if canvas is already created
     while (canvas.firstChild) {
         canvas.removeChild(canvas.firstChild);
     }
@@ -17,6 +20,7 @@ sizeSelector.addEventListener("click", function(event) {
     makeGrid(height, width);
 });
 
+// builds canvas and allows you to select a color for coloring tile
 function makeGrid(height, width) {
     for (let i = 0; i < height; i++) {
         const row = document.createElement("tr");
@@ -31,5 +35,3 @@ function makeGrid(height, width) {
         }
     }
 }
-
-    
