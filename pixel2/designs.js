@@ -1,27 +1,23 @@
 const canvas = document.getElementById("pixelCanvas");
 const color = document.getElementById("colorSelector");
 const size = document.getElementById("sizeSelector");
-
-
 const height = document.getElementById("gridHeight").value;
 const width = document.getElementById("gridWidth").value;
+
 makeGrid(height, width);
 
-sizeSelector.addEventListener("click", (event) => {
+sizeSelector.addEventListener("click", function(event) {
     event.preventDefault();
 
+    while (canvas.firstChild) {
+        canvas.removeChild(canvas.firstChild);
+    }
     const height = document.getElementById("gridHeight").value;
     const width = document.getElementById("gridWidth").value;
-    canvas.firstElementChild.remove();
-
     makeGrid(height, width);
-
-
 });
 
 function makeGrid(height, width) {
-
-
     for (let i = 0; i < height; i++) {
         const row = document.createElement("tr");
         canvas.appendChild(row);
@@ -33,6 +29,7 @@ function makeGrid(height, width) {
             })
 
         }
-
     }
 }
+
+    
